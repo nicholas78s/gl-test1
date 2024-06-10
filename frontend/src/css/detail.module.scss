@@ -1,0 +1,161 @@
+@use "./utils" as *;
+@use "./global" as *;
+
+.profileSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px 16px 16px 16px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.098);
+  max-width: 500px;
+}
+.flexColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 24px 24px 56px 23px;
+}
+.headerRow {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px 10px;
+  margin: 0px 0px 0px 1px;
+}
+.nameTitle {
+  position: relative;
+  min-width: 0px;
+  font: 700 24px/1.25 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+}
+.profileImage {
+  position: relative;
+  width: 20px;
+  min-width: 0px;
+  height: 20px;
+  cursor: pointer;
+}
+.contactGrid {
+  position: relative;
+  display: grid;
+  align-content: start;
+  row-gap: 14px;
+  column-gap: 24px;
+  margin: 40px 0px 0px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.phoneLabel {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 18px/1.33 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+}
+.phoneNumber {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 16px/1.5 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+  letter-spacing: -0.6px;
+}
+.emailLabel {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 18px/1.33 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+}
+.emailAddress {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 16px/1.5 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+}
+.hireDateLabel {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 18px/1.33 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+  letter-spacing: -0.2px;
+}
+.hireDate {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 16px/1.5 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+}
+.positionLabel {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 18px/1.33 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+}
+.positionName {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 16px/1.5 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+}
+.departmentLabel {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 18px/1.33 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+}
+.departmentName {
+  position: relative;
+  grid-row: span 1;
+  grid-column: span 1;
+  font: 400 16px/1.12 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+}
+.additionalInfoLabel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px 0px 2px;
+  width: 252px;
+  font: 400 18px/1.33 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+  text-align: center;
+  letter-spacing: -0.2px;
+}
+.additionalInfoText {
+  position: relative;
+  margin: 12px 0px 0px 1px;
+  font: 400 16px/1.12 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+}
+
+/* new */
+
+.modalBackdrop {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.75);  
+  /*backdrop-filter: blur(20px);*/
+}
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  text-align: left;
+}

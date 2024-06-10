@@ -1,0 +1,242 @@
+@use "./utils" as *;
+@use "./global" as *;
+
+.contactSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+.contactWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px 0px;
+  margin: 64px auto 262px;
+  width: 87.58%;
+  max-width: 1121.015625px;
+  @include md {
+    margin: 64px auto 150px;
+  }
+  @include xs {
+    margin: 64px auto 80px;
+  }
+  @include tn {
+    margin: 50px auto;
+  }
+}
+.contactImage {
+  position: relative;
+  margin: 0px 1px 0px 0px;
+  width: 99.91%;
+  object-fit: cover;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+/*
+  todo  
+*/
+.contactSearch {
+  position: relative;
+}
+.contactSearchControl {
+  border: 1px solid #D4DEFE;
+  border-radius: 20px;
+  background-color: white;
+  /*color: #8189A3;*/
+  color: rgb(129, 137, 163);
+  padding: 16px 20px;
+  height: 48px;
+}
+.contactSearchControl:focus{
+  outline: none;
+}
+.searchIcon {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+}
+.closeIcon {
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+/*
+  end
+*/
+.contactGrid {
+  position: relative;
+  display: grid;
+  align-content: start;
+  column-gap: 25px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  @include mq-between(xl, max) {
+    row-gap: 25px;
+  }
+  @include xl {
+    row-gap: 25px;
+  }
+  @include md {
+    row-gap: 25px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @include xs {
+    column-gap: 16px;
+  }
+  @include xxs {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+.contactItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-row: span 1;
+  grid-column: span 1;
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px 16px 16px 16px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.098); 
+  cursor: pointer;
+}
+.contactDetails {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0px 176px 24px;
+  width: 211px;
+  max-width: 85%;  
+  @include md {
+    margin: 24px auto 150px;
+    width: 85%;
+  }
+  @include xs {
+    margin: 24px auto 80px;
+  }
+  @include tn {
+    margin: 24px auto 50px;
+  }
+}
+.contactName {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font: 700 24px/1.25 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(38, 44, 64);
+  text-align: center;
+  letter-spacing: -0.4px;
+  @include md {
+    align-items: flex-start;
+    font-size: 22px;
+  }
+  @include xxs {
+    font-size: 20px;
+  }
+}
+.contactPhoneRow {
+  position: relative;
+  display: flex;
+  gap: 0px 14px;
+  margin: 24px 0px 0px;
+  @include tn {
+    column-gap: 8px;
+  }
+}
+.contactPhoneIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.contactPhoneNumber {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 0px;
+  font: 400 14px/1.42 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+  text-align: center;
+  letter-spacing: -0.6px;
+}
+.contactPhoneRow1 {
+  position: relative;
+  display: flex;
+  gap: 0px 11px;
+  margin: 12px 0px 0px;
+  @include tn {
+    column-gap: 8px;
+  }
+}
+.contactEmailIcon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.contactEmail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 0px;
+  font: 400 14px/1.42 "Proxima Nova", Helvetica, Arial, serif;
+  color: rgb(129, 137, 163);
+  text-align: center;
+}
+.contactEmailRow {
+  position: relative;
+  display: flex;
+  gap: 0px 11px;
+  margin: 12px 0px 0px;
+  @include tn {
+    column-gap: 8px;
+  }
+}
+
+
+.modalBackdrop {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.75);  
+  /*backdrop-filter: blur(20px);*/
+}
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.modalBackdrop2 {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.75);  
+}
+.modalContent2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /*height: 30%;*/
+  max-width: 60%;
+  background-color: rgb(39, 43, 114);
+  padding: 3rem;
+  border-radius: 5px;
+}
